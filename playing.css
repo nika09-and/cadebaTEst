@@ -84,7 +84,6 @@ body {
     display: none;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
 }
 
 .helperBuilding{
