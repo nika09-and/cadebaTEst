@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- iOS Home Screen Icon -->
+    <link rel="apple-touch-icon" href="materials/main menu/homeScreenLogo-07-07.png">
+
+    <meta name="theme-color" content="#000000">
+    <title>Cadeba</title>
+    <link rel="stylesheet" href="./playing.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <audio id="powerUp" src="materials/main menu/sounds/preview (mp3cut.net) good.mp3"></audio>
+    <audio id="begin" src="materials/main menu/sounds/Male Let The Battle Begin.mp3"></audio>
+    <audio id="beginDrum" src="materials/main menu/sounds/begin sound.wav"></audio>
+
+    <div id="cardZoom">
+      <img id="bigCard">
+    </div>
+
+    <div id="loadingScreen">
+      <h1 id="loadingHeader">cadeba</h1>
+      <p id="adviceText">while building sometimes aiming low gets you victory faster, time was, time is and time will be the key to the world!</p>
+      <div id="laodingWindow">
+        <p id="loadingText">loading</p>
+        <img id="loadingIcon" src="materials/main menu/Rolling@1x-1.0s-200px-200px.gif">
+      </div>
+    </div>
+
+    <div id="starterScreen">
+      <div id="starterContent">
+        <h1 id="starterHeader">The game starts in</h1>
+        <p id="starterCountDown">3</p>
+      </div>
+    </div>
+    
+    <div id="gameScreen">
+      <p id="actionMessage">not your turn!</p>
+      <div id="profiles">
+        <div id="profile1">
+          <div id="profileInfo">
+            <P id="playerName">kupingard</P>
+            <p id="score">0</p>
+          </div>
+        </div>
+        <div id="timerContainer">
+          <p id="timerFake">00:</p>
+          <p id="timer">30</p>
+        </div>
+        <div id="profile2">
+          <div id="enemyProfileInfo">
+            <P id="enemyName">shah abas</P>
+            <p id="enemyScore">0</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="locations">
+        <div id="location1"><img id="locImage1"></div>
+        <div id="location2"><img id="locImage2"></div>
+        <div id="location3"><img id="locImage3"></div>
+      </div>
+
+      <button id="shuffleButton">Shuffle</button>
+    <!-- Dropzone Sections -->
+    <div id="dropZoneContainer">
+      <div class="dropzone-section" id="needed">
+        <div class="dropzone" id="dropzone1"></div>
+        <div class="dropzone" id="dropzone2"></div>
+      </div>
+      <div class="dropzone-section" id="needed">
+        <div class="dropzone" id="dropzone3"></div>
+        <div class="dropzone" id="dropzone4"></div>
+      </div>
+      <div class="dropzone-section" id="needed">
+        <div class="dropzone" id="dropzone5"></div>
+        <div class="dropzone" id="dropzone6"></div>
+      </div>
+    </div>
+    
+      <div id="cards-container">
+        <div id="cards"></div>
+      </div>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- es shevqmeni da display noneze maq event listeneri arisdasamatebeli helperze ro gaxsnas es panjara -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <div id="helperChooserWindow">
+        <h1 id="helperWindowHeader">choose your goal</h1>
+        <div id="helperwindowBuildings">
+          <div id="helperBuildingRows1">
+            <div id="buildingPicturesChurch"  class="helperBuilding"></div>
+            <div id="buildingPicturesFarm" class="helperBuilding"></div>
+          </div>
+          <div id="helperBuildingRows">
+            <div id="buildingPicturesWatchTower" class="helperBuilding"></div>
+            <div id="buildingPicturesLibrary" class="helperBuilding"></div>
+          </div>
+          <div id="helperBuildingRows">
+            <div id="buildingPicturesBarracks" class="helperBuilding"></div>
+            <div id="buildingPicturesWall" class="helperBuilding"></div>
+          </div>
+          <div id="helperBuildingRows">
+            <div id="buildingPicturesWorkshop" class="helperBuilding"></div>
+            <div id="buildingPicturesArmory" class="helperBuilding"></div>
+          </div>
+          <div id="helperBuildingRows">
+            <div id="buildingPicturesCastle" class="helperBuilding"></div>
+            <div id="buildingPicturesForge" class="helperBuilding"></div>
+          </div>
+        </div>
+        <div id="helperWindowButtons">
+          <img src="materials/main menu/helperWindowGoalButton.svg" id="helperGoal">
+          <img src="materials/main menu/helperWindowExitButton.svg" id="helperExit">
+          <img src="materials/main menu/helperWindowBuildButton.svg" id="helperBuild">
+        </div>
+      </div>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- trade window -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<div id="tradeWindow">
+  <div id="tradeInstructions">
+    <p id="tradeInstructionsHeader">trade one to random</p>
+    <p id="tradeInstructionsInfo">you choose one card from your deck and trade it for a random resource card to 
+      the bank.</p>
+  </div>
+  <div id="tradeBankResource">
+    <p id="tradeBankResourceHeader">you get</p>
+    <img src="materials/main menu/randomResource.svg" id="tradeBankResourceImage">
+  </div>
+  <div id="tradeplayerResource">
+    <p id="tradeplayerResourceHeader">you give</p>
+    <div id="tradeplayerResourceImages">
+      <div class="offer" id="offerWood">wood</div>
+      <div class="offer" id="offerStone">stone</div>
+      <div class="offer" id="offerIron">iron</div>
+    </div>
+  </div>
+  <div id="tradeButtons">
+    <img id="1-?" src="materials/main menu/trade1torand.svg">
+    <img id="tradeExit" src="materials/main menu/helperWindowExitButton.svg">
+    <img id="2-1" src="materials/main menu/trade2to1.svg">
+  </div>
+</div>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+      <div id="resourcesContainer">
+        <div id="buildingHelper">
+          <div id="helper1" status="empty">
+            <p id="empty1">add goal</p>
+            <div id="completeGoal1">
+              <div id="completelogo1"><img id="completeHelperIcon1"></div>
+              <p id="complete">complete</p>
+            </div>
+            <div id="helpercontainer1">
+              <div id="logo1"><img id="helperIcon1"></div>
+              <div id="wood1"><p id="helperHeader">wood</p><div id="woodTRWrap"><p id="woodTracker1">10</p><p>/</p><p id="woodQuant1">0</p></div></div>
+              <div id="stone1"><p id="helperHeader">stone</p><div id="woodTRWrap"><p id="stoneTracker1">10</p><p>/</p><p id="stoneQuant1">0</p></div></div>
+              <div id="iron1"><p id="helperHeader">iron</p><div id="woodTRWrap"><p id="ironTracker1">10</p><p>/</p><p id="ironQuant1">0</p></div></div>
+            </div>
+          </div>
+          <div id="helper2">
+            <p id="empty2">add goal</p>
+            <div id="completeGoal2">
+              <div id="completelogo2"><img id="completeHelperIcon2"></div>
+              <p id="complete">complete</p>
+            </div>
+            
+            <div id="helpercontainer2">
+              <div id="logo2"><img id="helperIcon2"></div>
+              <div id="wood2"><p id="helperHeader">wood</p><div id="woodTRWrap"><p id="woodTracker2">10</p><p>/</p><p id="woodQuant2">0</p></div></div>
+              <div id="stone2"><p id="helperHeader">stone</p><div id="woodTRWrap"><p id="stoneTracker2">10</p><p>/</p><p id="stoneQuant2">0</p></div></div>
+              <div id="iron2"><p id="helperHeader">iron</p><div id="woodTRWrap"><p id="ironTracker2">10</p><p>/</p><p id="ironQuant2">0</p></div></div>
+            </div>
+          </div>
+        </div>
+        <div id="buildingResources">
+
+        </div>
+      </div>    
+  
+      <audio id="powerUp" src="materials/sounds/powerup.mp3"></audio>
+  
+      <div id="buttons">
+        <img id="finishButton" src="materials/main menu/inactive_finish.svg">
+      </div>
+
+      <div id="bottomButtons">
+        <img src="materials/main menu/trade.svg" id="trade"/>
+        <img src="materials/main menu/pass.svg" id="pass"/>
+        <img src="materials/main menu/build.svg" id="build"/>
+      </div>
+
+    </div>
+
+
+    
+
+    <script src="libs/DragDropTouch.js"></script>
+    <script src="playing.js"></script>
+  </body>
+</html>
