@@ -213,7 +213,7 @@ helper2.addEventListener('click', () => {
     }
     else{
         helperChooserWindow.style.display = "flex";
-        firstOrSecond = "first";
+        firstOrSecond = "second";
     }
 })
 
